@@ -1,0 +1,19 @@
+[Unit]
+Description=Obsidian vault indexing daemon (basic-memory MCP via SSE)
+After=default.target
+
+[Service]
+Type=simple
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+# IMPORTANT: Use --transport sse, NOT stdio.
+# stdio needs a connected client on stdin/stdout. As a systemd daemon,
+# no client exists — the process exits immediately and systemd restart-loops it.
+# SSE runs as an HTTP server that stays alive independently.
+ExecStart=%h/.local/bin/basic-memory mcp --project my-project --transport sse --port 8765
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Watch Claude Code session files and trigger Neo4j reimport
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=%h/bin/watch-sessions.sh
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

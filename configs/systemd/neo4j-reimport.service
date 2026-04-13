@@ -1,0 +1,9 @@
+[Unit]
+Description=Import Claude Code sessions into Neo4j knowledge graph
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/second-brain/context-graph
+ExecStart=/usr/bin/make import-and-seed
+StandardOutput=journal
+StandardError=journal

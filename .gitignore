@@ -1,0 +1,33 @@
+# Environment and secrets
+.env
+.env.*
+*.env
+secrets/
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Data directories (never commit actual data)
+graphify-out/
+.code-review-graph/
+neo4j_data/
+neo4j_logs/
+*.jsonl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

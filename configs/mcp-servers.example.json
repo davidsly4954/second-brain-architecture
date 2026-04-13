@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "code-review-graph": {
+      "command": "code-review-graph",
+      "args": ["mcp"],
+      "description": "Live AST tracking — functions, imports, call relationships"
+    },
+    "neo4j": {
+      "command": "uvx",
+      "args": ["mcp-neo4j"],
+      "env": {
+        "NEO4J_URI": "bolt://localhost:7687",
+        "NEO4J_USER": "neo4j",
+        "NEO4J_PASSWORD": "<your-neo4j-password>",
+        "NEO4J_DATABASE": "neo4j"
+      },
+      "description": "Session history graph — topics, tools, cross-session links"
+    },
+    "obsidian-vault": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/obsidian-mcp", "--vault", "/path/to/your/obsidian/vault"],
+      "description": "Direct Obsidian vault access — read/search notes"
+    },
+    "basic-memory": {
+      "type": "sse",
+      "url": "http://localhost:8765/sse",
+      "description": "Obsidian vault index with semantic search (SSE daemon)"
+    },
+    "qdrant": {
+      "command": "uvx",
+      "args": ["mcp-qdrant"],
+      "env": {
+        "COLLECTION_NAME": "my-knowledge",
+        "QDRANT_LOCAL_PATH": "${HOME}/.qdrant-data/my-project",
+        "EMBEDDING_MODEL": "sentence-transformers/all-MiniLM-L6-v2"
+      },
+      "description": "Vector similarity search across notes and memory files"
+    }
+  }
+}

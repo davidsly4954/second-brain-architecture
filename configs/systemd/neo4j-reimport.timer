@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodic Neo4j reimport (catches missed session imports)
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

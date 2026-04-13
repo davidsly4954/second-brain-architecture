@@ -1,0 +1,16 @@
+[Unit]
+Description=Claude Code session log HTTP server
+After=default.target
+
+[Service]
+Type=simple
+# claude-code-logs serves JSONL session files over HTTP
+# Install: go install github.com/jshun/claude-code-logs@latest
+ExecStart=%h/go/bin/claude-code-logs -project my-project -port 8080
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
