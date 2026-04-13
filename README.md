@@ -18,8 +18,6 @@ This architecture solves that with 8 complementary knowledge layers that capture
 
 ## Architecture Overview
 
-<div align="center">
-
 ```mermaid
 graph TB
     subgraph "Knowledge Layers"
@@ -57,10 +55,6 @@ graph TB
     style L7 fill:#1a1a2e,stroke:#e94560,color:#fff
     style L8 fill:#1a1a2e,stroke:#e94560,color:#fff
 ```
-
-<em>The 8 layers and their update triggers — blue nodes auto-update, purple is on-demand</em>
-
-</div>
 
 ## The 8 Layers
 
