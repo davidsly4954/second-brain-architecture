@@ -125,8 +125,8 @@ See the [Setup Guide](docs/setup-guide.md) for full instructions. The short vers
 
 ```bash
 # 1. Clone this repo for the config templates
-git clone https://github.com/davidsly4954/second-brain-architecture.git
-cd second-brain-architecture
+git clone https://github.com/davidsly4954/8-Layer-Knowledge-Graph.git
+cd 8-Layer-Knowledge-Graph
 
 # 2. Start Neo4j
 docker compose -f configs/docker-compose.yml up -d
@@ -163,7 +163,7 @@ cp configs/hooks/*.sh /path/to/your/project/.claude/hooks/
 ## Project Structure
 
 ```
-second-brain-architecture/
+8-Layer-Knowledge-Graph/
 ├── README.md                          # You are here
 ├── architecture.md                    # Deep dive into each layer
 ├── diagrams/
